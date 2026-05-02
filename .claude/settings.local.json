@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh issue create --repo tanyachel/tanyachel.github.io --title 'Add Projects section with 2-3 deployed apps' --body ' *)",
+      "PowerShell($env:PATH = $env:PATH + \";C:\\\\Program Files\\\\GitHub CLI\"; gh --version)"
+    ]
+  }
+}
