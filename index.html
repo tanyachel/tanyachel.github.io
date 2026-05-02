@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tatiana Bimatova — Front-End Developer</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #3b5bdb;
+      --accent-light: #edf2ff;
+      --text: #1a1a2e;
+      --muted: #5c5f7a;
+      --border: #dee2f0;
+      --bg: #f8f9fc;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 820px;
+      margin: 48px auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px 44px;
+      margin-bottom: 28px;
+      display: flex;
+      gap: 36px;
+      align-items: flex-start;
+    }
+
+    .header-avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .header-info h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 4px;
+    }
+
+    .header-info .title {
+      font-size: 15px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+
+    .contacts span, .contacts a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--muted);
+    }
+    .contacts a:hover { color: var(--accent); }
+
+    /* ── Sections ── */
+    .section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 44px;
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* About */
+    .about-text {
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    /* Experience / Education */
+    .entry {
+      margin-bottom: 24px;
+    }
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .entry-header h3 {
+      font-size: 15.5px;
+      font-weight: 700;
+    }
+
+    .entry-header .date {
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .entry-sub {
+      font-size: 13.5px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .entry ul {
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .entry ul li {
+      margin-bottom: 5px;
+    }
+
+    .entry .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    /* Languages */
+    .languages-list {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .lang-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .lang-item .lang-name { font-weight: 600; }
+    .lang-item .lang-level { color: var(--muted); font-size: 13px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      header { flex-direction: column; align-items: center; text-align: center; padding: 28px 24px; }
+      .contacts { justify-content: center; }
+      .section { padding: 24px 20px; }
+      .entry-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Header -->
+    <header>
+      <div class="header-avatar">TB</div>
+      <div class="header-info">
+        <h1>Tatiana Bimatova</h1>
+        <div class="title">Front-End Developer</div>
+        <div class="contacts">
+          <a href="mailto:tanya.bimatova@gmail.com">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            tanya.bimatova@gmail.com
+          </a>
+          <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Germany, Andernach
+          </span>
+          <a href="tel:+4915566974980">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 12 19.79 19.79 0 0 1 1.07 3.42 2 2 0 0 1 3.05 1.24h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.1a16 16 0 0 0 5.91 5.91l1.42-1.26a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 21.06 16l.86.92Z"/></svg>
+            +49 15566 974980
+          </a>
+          <a href="https://www.linkedin.com/in/tatiana-bimatova-791602152/" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section class="section">
+      <h2>About Me</h2>
+      <p class="about-text">
+        I believe that a product should be pleasant and effortless for a user, and I'm willing to go to great lengths to achieve that. I care deeply about intuitive UX, scalable architecture, clean abstractions, and well-structured APIs that make both user interactions and developer experience seamless.
+      </p>
+      <br />
+      <p class="about-text">
+        I pay close attention to business and design details while keeping the broader product vision and long-term strategy in focus. I prefer teams with clear and open communication, and I actively contribute to that culture through thoughtful feedback, transparent collaboration, and shared ownership of outcomes. I favor environments where curiosity, accountability, and continuous improvement are encouraged.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section class="section">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Communication</span>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section">
+      <h2>Experience</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <h3>QA Engineer Intern</h3>
+          <span class="date">Oct 2017 – Dec 2017</span>
+        </div>
+        <div class="entry-sub">Dabbl</div>
+        <ul>
+          <li>Created a traceability matrix for the pricing module that ensured solid test coverage.</li>
+          <li>Developed test cases that helped identify gaps in requirements and spot high-priority issues.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <h3>B.A., Computer Science</h3>
+          <span class="date">June 2024</span>
+        </div>
+        <div class="entry-sub">UC San Diego</div>
+        <div class="meta">GPA: 3.5</div>
+        <ul>
+          <li>Web Client Languages</li>
+          <li>Intro to Computer Security</li>
+          <li>Software Engineering</li>
+          <li>Design &amp; Analysis of Algorithms</li>
+          <li>Theory of Computation</li>
+          <li>Advanced Data Structures</li>
+          <li>Basic Data Structures &amp; OO Design</li>
+          <li>Mathematics for Algorithms and Systems Analysis</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="section">
+      <h2>Languages</h2>
+      <div class="languages-list">
+        <div class="lang-item">
+          <span class="lang-name">English</span>
+          <span class="lang-level">Fluent</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Russian</span>
+          <span class="lang-level">Fluent</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
